@@ -33,7 +33,13 @@ fun FormIsian(
     jenisK: List<String> = listOf("Laki-laki", "Perempuan"),
     OnSubmitBtnClick : () -> Unit
 
+    pilihanJK: List<String>,
+    onSubmitButtonClicked: (MutableList<String>) -> Unit,
+    modifier: Modifier = Modifier
+
 ){
+
+
     Scaffold (modifier = Modifier,
         topBar = {
             TopAppBar(
