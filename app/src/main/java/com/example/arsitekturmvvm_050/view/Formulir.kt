@@ -60,7 +60,7 @@ fun FormIsian(
             verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.CenterHorizontally) {
             OutlinedTextField(
-                value = "txtNama",
+                value = txtNama,
                 singleLine = true,
                 modifier = Modifier
                     .padding(top = 20.dp)
