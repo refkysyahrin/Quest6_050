@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
-import androidx.compose.material3.R
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -24,16 +23,20 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.arsitekturmvvm_050.model.Siswa
+import org.jetbrains.annotations.ApiStatus
+import com.example.arsitekturmvvm_050.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TampilData(
-    onBackBtnClick:()-> Unit
+    statusUiSiswa: Siswa,
+    onBackBtnClicked:()-> Unit
 ){
     val items = listOf(
-        Pair(first = stringResource(id = R.string.nama_lengkap), second = "Refky Muhammad Syahrin"),
-        Pair(first = stringResource(id = R.string.jenis_kelamin), second = "Laki-laki"),
-        Pair(first = stringResource(id = R.string.alamat), second = "Tasikmalaya"),
+        Pair(first = stringResource(id = R.string.nama_lengkap), second = statusUiSiswa.nama),
+        Pair(first = stringResource(id = R.string.jenis_kelamin), second = statusUiSiswa.gender),
+        Pair(first = stringResource(id = R.string.alamat), second = statusUiSiswa.alamat),
     )
     Scaffold (modifier = Modifier,
         topBar = {
@@ -55,7 +58,7 @@ fun TampilData(
                 Spacer(modifier = Modifier.height(height = 30.dp))
                 Button(
                     modifier = Modifier.fillMaxWidth(),
-                    onClick = onBackBtnClick) {
+                    onClick = onBackBtnClicked) {
                     Text(text = stringResource(id = R.string.back))
                 }
             }
