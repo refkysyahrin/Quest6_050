@@ -37,7 +37,7 @@ import com.example.arsitekturmvvm_050.R
 @Composable
 fun FormIsian(
     jenisK: List<String>,
-    OnSubmitBtnClick : (MutableList<String>) -> Unit,
+    OnSubmitBtnClicked : (MutableList<String>) -> Unit,
     modifier: Modifier = Modifier
 
 ){
@@ -114,7 +114,7 @@ fun FormIsian(
             Button(
                 modifier = Modifier.fillMaxWidth(fraction = 1f)
                     .padding(all = 25.dp),
-                onClick = OnSubmitBtnClick
+                onClick = {OnSubmitBtnClicked(lisData)}
             ){
                 Text(text = stringResource(id = R.string.submit))
             }
